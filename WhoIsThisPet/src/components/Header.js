@@ -13,13 +13,15 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 70,
-    backgroundColor: "#E66B7C"
+    backgroundColor: "#E66B7C",
+    paddingTop: 30,
+    paddingBottom: 80,
   },
   title: {
     color: '#FFF',
     fontSize: 20,
-    textTransform: 'uppercase'
+    textTransform: 'uppercase',
+    fontWeight: 'bold'
   }
 });
 

@@ -1,39 +1,50 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { withNavigation } from 'react-navigation';
 
-const NotFoundPet = () => {
+const NotFoundPet = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Image 
-        style={styles.image}
-        source={require('../../assets/images/pet-not-found-image.png')}
-      />
-      <Text style={styles.message}>Nenhum PET encontrado.</Text>
-      <View style={styles.instructionContainer}>
-
+    <>
+      <View style={{ opacity: 0.4 }}>
+        <Image 
+          style={styles.image}
+          source={require('../../assets/images/pet-not-found-image.png')}
+        />
+        <Text style={styles.message}>Nenhum PET encontrado.</Text>
       </View>
-    </View>
+      
+      <TouchableOpacity 
+        style={styles.ctaCreatePet}
+        onPress={() => navigation.navigate('PetAdd')}
+      >
+        <Text style={styles.ctaCreatePetText}>Adicionar seu PET</Text>
+      </TouchableOpacity>
+    </>
   )
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    opacity: 0.5
-  },
   image: {
-    marginTop: 30,
     width: 200,
     height: 200
   },
   message: {
     marginTop: 10,
-    fontSize: 18
+    fontSize: 20
   },
-  instructionContainer: {
-    
+  ctaCreatePet: {
+    marginTop: 50,
+    backgroundColor: '#E66B7C',
+    alignSelf: 'stretch',
+    alignItems: 'center',
+    paddingVertical: 10,
+    opacity: 1
+  },
+  ctaCreatePetText: {
+    color: '#FFF', 
+    fontSize: 25, 
+    fontWeight: 'bold'
   }
 });
 
-export default NotFoundPet;
+export default withNavigation(NotFoundPet);

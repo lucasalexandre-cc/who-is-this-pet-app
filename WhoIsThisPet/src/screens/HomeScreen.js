@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 
 import Header from '../components/Header';
+import CardContainer from '../components/CardContainer';
 import NotFoundPet from '../components/NotFoundPet';
 
 const HomeScreen = () => {
@@ -12,17 +13,15 @@ const HomeScreen = () => {
   );
 
   return (
-    <View style={styles.container}>
+    <View style={{ flex: 1 }}>
       <Header title="Who is this pet" />
-      {petList.length > 0 ? petListComponent : <NotFoundPet />}
+      <CardContainer>
+        {petList.length > 0 ? petListComponent : <NotFoundPet />}
+      </CardContainer>
     </View>
   )
 };
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
+const styles = StyleSheet.create({});
 
 export default HomeScreen;
