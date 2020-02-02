@@ -2,12 +2,14 @@ import { createAppContainer } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 
 import HomeScreen from './src/screens/HomeScreen';
-import PetAddScreen from './src/screens/PetAddScreen';
+import PetCreateScreen from './src/screens/PetCreateScreen';
+import PetAddPhotoScreen from './src/screens/PetAddPhotoScreen';
 
 const navigator = createStackNavigator(
   {
     Home: HomeScreen,
-    PetAdd: PetAddScreen 
+    PetCreate: PetCreateScreen,
+    PetAddPhoto: PetAddPhotoScreen,
   },
   {
     initialRouteName: 'Home',

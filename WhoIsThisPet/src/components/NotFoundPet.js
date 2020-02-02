@@ -15,7 +15,7 @@ const NotFoundPet = ({ navigation }) => {
       
       <TouchableOpacity 
         style={styles.ctaCreatePet}
-        onPress={() => navigation.navigate('PetAdd')}
+        onPress={() => navigation.navigate('PetCreate')}
       >
         <Text style={styles.ctaCreatePetText}>Adicionar seu PET</Text>
       </TouchableOpacity>

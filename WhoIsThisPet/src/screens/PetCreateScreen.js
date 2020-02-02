@@ -91,7 +91,9 @@ const styles = StyleSheet.create({
 
 export default withFormik({
   mapPropsToValues: () => ({ typeId: null, name: '', gender: '' }),
-  handleSubmit: (values) => {
+  handleSubmit: (values, { props }) => {
+    //Submit form
     console.log(values);
+    props.navigation.navigate('PetAddPhoto');
   }
 })(PetAddScreen);
